@@ -1,0 +1,15 @@
+---
+- name: instalando apache2 em distro Debian
+  package:
+   name: "{{apache_debian}}" #variavel a ser declarada no /vars
+   state: present
+  when: ansible_os_family == "Debian"
+
+- name: instalando apache2 em distro CentOS
+  package:
+   name: "{{apache_centos}}"
+   state: present
+  notify: #chamada do Handler (condicao /handler)
+   - start apache centos
+   - disable firewalld
+  when: ansible_os_family == "RedHat"

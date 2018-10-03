@@ -1,0 +1,11 @@
+---
+# tasks file for web
+
+- name: Instalando Apache nos Debian-like
+  include: apachedeb.yaml
+  when: ansible_os_family == "Debian"
+
+- name: Instalando Apache no CentOS
+  include: apachecent.yaml
+  when: ansible_os_family == "RedHat"
+

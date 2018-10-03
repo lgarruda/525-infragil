@@ -1,0 +1,11 @@
+---
+- name: Instalando pacotes CentOS
+  yum:
+   name: "{{item}}"
+   state: present
+  with_items:
+   - vim
+   - htop
+   - sl
+   - cowsay
+   - httpd

@@ -1,0 +1,12 @@
+---
+- name: Utilizando listas para os modulos
+  hosts: all
+  tasks:
+   - name: Garantindo os usuarios padroes do sistema
+     user:
+      name: "{{item}}"
+      state: present
+     with_items:
+      - developer
+      - devops
+      - leandro

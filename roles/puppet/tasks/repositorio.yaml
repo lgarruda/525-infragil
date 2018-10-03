@@ -1,0 +1,6 @@
+---
+- name: Adicionando repositorio
+  get_url:
+    url: wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
+    dest: /etc/ansible/roles/puppet/files
+    mode: 0440

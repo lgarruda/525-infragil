@@ -1,0 +1,10 @@
+---
+- name: Criando usuarios
+  user:
+   name: "{{item.nome}}"
+   password: "{{item.senha}}"
+   home: "/srv/{{item.nome}}"
+  with_items:
+   - {nome: leandro, senha: '$1$nHpjQ9G5$7.q2xlh4V0ImSML3Eby5z.' }
+   - {nome: developer, senha: '$1$nHpjQ9G5$7.q2xlh4V0ImSML3Eby5z.' }
+   - {nome: devops, senha: '$1$nHpjQ9G5$7.q2xlh4V0ImSML3Eby5z.' }

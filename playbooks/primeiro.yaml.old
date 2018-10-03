@@ -1,0 +1,27 @@
+---
+- name: Minha primeira playbook
+  hosts: all
+  tasks: 
+   - name: Adicionando usuario
+     user:
+      name: devops
+      state: present
+
+- name: Instalando programas
+  hosts: docker devops
+  tasks:
+   - name: Instalando o vim
+     apt:
+      name: vim
+      state: present
+      update_cache: yes
+
+- name: Instalando vim CentOS
+  hosts: automation
+  tasks:
+   - name: Instalando o VIM
+     yum:
+      name: vim
+      state: present
+      update_cache: yes
+   

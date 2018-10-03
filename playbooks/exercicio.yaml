@@ -1,0 +1,38 @@
+---
+- name: Exercicio
+  hosts: devops docker
+  vars:
+   - username: leandro
+  tasks:
+   - name: Criando Usuario
+     user:
+      name: "{{username}}"
+      state: present
+
+   - name: Instalar Pacotes Debian-Like
+     package:
+      name:
+       - epel-release
+       - vim
+       - htop
+       - sl
+       - cowsay
+      state: present
+      update_cache: yes
+     ignore_errors: yes
+
+
+- name: Exercicio2
+  hosts: automation
+  tasks:
+   - name: Instalar Pacotes CentOS
+     yum:
+      name:
+       - epel-release
+       - vim
+       - htop
+       - sl
+       - cowsay
+      state: present
+      update_cache: yes
+     ignore_errors: yes     

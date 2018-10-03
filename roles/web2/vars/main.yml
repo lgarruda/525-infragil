@@ -1,0 +1,4 @@
+---
+# vars file for web2
+apache_centos: httpd
+apache_debian: apache2

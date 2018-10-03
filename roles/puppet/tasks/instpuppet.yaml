@@ -1,0 +1,6 @@
+---
+- name: Instalando o puppet agent Debian
+  package:
+   name: "{{puppet_debian}}" #variavel a ser declarada no /vars
+   state: present
+  when: ansible_os_family == "Debian"

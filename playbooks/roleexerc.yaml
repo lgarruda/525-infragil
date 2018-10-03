@@ -1,0 +1,5 @@
+---
+- name: Executando minha primeira role
+  hosts: all
+  roles:
+   - web

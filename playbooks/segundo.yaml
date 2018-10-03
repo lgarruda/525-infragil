@@ -1,0 +1,31 @@
+---
+- name: Instalando epel-release
+  hosts: automation
+  tasks:
+   - name: Instalando EPEL
+     yum:
+      name: epel-release
+
+- name: Criando usuarios
+  hosts: all
+  tasks:
+   - name: usuario devops
+     user:
+      name: devops
+
+   - name: usuario developer
+     user:
+      name: developer
+
+   - name: usuario leandro
+     user:
+      name: leandro
+
+   - name: Instalando outros pacotes
+     package:
+      name:
+       - vim
+       - htop
+       - cowsay
+       - sl
+      state: present

@@ -1,0 +1,18 @@
+---
+- name: Alterando hostname das máquinas
+  hosts: devops
+  tasks:
+   - hostname:
+       name: devops
+
+- name: Alterando hostname das máquinas
+  hosts: docker
+  tasks:
+   - hostname:
+       name: docker
+
+- name: Alterando hostname das máquinas
+  hosts: automation
+  tasks:
+   - hostname:
+       name: automation

@@ -1,0 +1,17 @@
+---
+- name: Instalando apache no CentOS
+  yum:
+   name: "{{item}}"
+   state: present
+  with_items:
+   - httpd
+
+- name: Stop service firewalld, if running
+  service:
+   name: firewalld
+   state: stopped
+
+- name: Start service httpd
+  service:
+   name: httpd
+   state: started

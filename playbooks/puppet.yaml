@@ -1,0 +1,5 @@
+---
+- name: Instalando puppet
+  hosts: devops docker
+  roles:
+   - puppet

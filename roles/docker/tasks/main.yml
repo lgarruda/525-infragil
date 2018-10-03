@@ -1,0 +1,7 @@
+---
+# tasks file for docker
+- name: Desinstalando o docker
+  include: uninstall.yaml
+
+- name: Instalando o docker
+  include: install.yaml

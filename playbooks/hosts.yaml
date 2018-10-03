@@ -1,0 +1,11 @@
+---
+- name: ETC HOSTS
+  hosts: all
+  tasks:
+   - name: configurando hosts da maquina
+     blockinfile:
+       path: /etc/hosts
+       block: |
+        192.169.33.150 devops devops.dexter.com.br
+        192.168.33.151 automation automation.dexter.com.br
+        192.168.33.152 docker docker.dexter.com.br
