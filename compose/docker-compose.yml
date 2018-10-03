@@ -1,0 +1,12 @@
+apache_1:
+ image: httpd
+ links:
+  - apache_2:httpd
+ ports:
+  - 80:80
+  - 81:80
+ volumes:
+  - exercicio:/usr/local/apache2/htdocs
+
+apache_2:
+ image: httpd
