@@ -1,0 +1,25 @@
+---
+
+- name: instalando o gitlab-ce
+  hosts: devops
+  tasks:
+   - name: Instalando outros pacotes
+     package:
+      name:
+       - curl
+       - openssh-server
+       - ca-certificates
+       - postfix
+      state: present
+      update_cache: yes
+
+   - name: Adicionando o repositorio do Gitlab
+     shell: 'curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash'
+
+   - name: Configurando environment
+     shell: 'EXTERNAL_URL="http://gitlab.dexter.com.br"' 
+
+   - name: Instalando o Gitlab
+     package:
+      name: gitlab-ce
+      update_cache: yes
