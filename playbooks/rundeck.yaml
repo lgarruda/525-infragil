@@ -1,0 +1,14 @@
+---
+- name: instalando Rundeck
+  hosts: automation
+  tasks:
+   - name: adicionando repositorio
+     yum:
+      name: http://repo.rundeck.org/latest.rpm
+      state: present
+
+   - name: Instalando o Rundeck
+     package:
+      name:
+       - rundeck
+       - java
